@@ -134,7 +134,7 @@ extension Date: SQLiteDataConvertible {
         }
         // Round to microseconds to avoid nanosecond precision error causing Dates to fail equality
         let valueSinceReferenceDate = value - Date.timeIntervalBetween1970AndReferenceDate
-        let secondsSinceReference = round(valueSinceReferenceDate * 1e6) / 1e6
+        let secondsSinceReference = round(valueSinceReferenceDate * 1e3) / 1e3
         self.init(timeIntervalSinceReferenceDate: secondsSinceReference)
     }
 
